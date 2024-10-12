@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Lingkaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet"> <!-- Ini adalah tautan ke file CSS Anda --> 
+
+    <script>
+        let x = 0;
+        let userName = '';
+
+        function startQuiz() {
+            userName = document.getElementById('nameInput').value;
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('quizScreen').style.display = 'block';
+        }
+
+        function quiz(event) {
+            var choices = event.target.parentElement.querySelectorAll('.choice');
+            choices.forEach(function(choice){
+                choice.style.backgroundColor = '#d9edff';
+            });
+            let button = event.currentTarget;
+            if(button.dataset.value == '1'){
+                button.style.backgroundColor = 'Yellow';
+                x += 20;
+            } else {
+                button.style.backgroundColor = 'Yellow';
+            }
+        }
+
+        function result(event) {
+            let button = event.currentTarget;
+            button.parentElement.querySelector('.feedback').innerHTML = `${userName}, skor anda adalah ${x}/100`;
+            button.disabled = true; // Menonaktifkan tombol setelah ditekan
+        }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg --bs-warning-bg-subtle" data-bs-theme="ms-auto">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <a class="navbar-brand" href="#">
+            <img src="aset/Tut Wuri Handayani.png" alt="Tut Wuri Handayani" width="70" height="70">
+          </a>
+          <a class="navbar-brand" href="#">
+            <img src="aset/Logo Provinsi.png" alt="Provinsi" width="50" height="70">
+          </a>
+          <a class="navbar-brand" href="#"></a>
+            <img src="aset/logo smanda.png" alt="smanda" width="60" height="70">
+          </a>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="materi.html">Materi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kuis.html">Kuis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="refleksi.html">Refleksi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Welcome screen -->
+    <div id="welcomeScreen" style="text-align: center; margin-top: 100px;">
+        <h1>Selamat mengerjakan kuis</h1>
+        <p>Silakan masukkan nama anda:</p>
+        <input type="text" id="nameInput" placeholder="Masukkan nama anda" style="padding: 0.5rem; font-size: 1.2rem;">
+        <br><br>
+        <button style="padding: 0.5rem 2rem; font-size: 1.2rem;" onclick="startQuiz()">Kerjakan Kuis</button>
+    </div>
+
+    <!-- Quiz screen -->
+    <div id="quizScreen" style="display:none; text-align: center;">
+        <h2 style="text-align: center; color:green">KUIS LINGKARAN</h2>
+
+        <!-- Petunjuk pengerjaan -->
+        <div style="background-color:#f1f1f1; padding: 1rem; margin: 1rem auto; border-radius: 10px; text-align: left; width: 80%;">
+            <h3>Petunjuk Pengerjaan:</h3>
+            <ol>
+                <li>Kerjakan soal kuis berikut dengan jujur dan teliti</li>
+                <li>Jawab pertanyaan kuis berikut dengan memilih satu pilihan jawaban yang paling benar</li>
+                <li>Anda bisa menggunakan Geogebra untuk membuat simulasi dari permasalahan soal sehingga lebih mudah untuk dikerjakan</li>
+                <li>Skor untuk masing-masing nomor adalah 20 sehingga skor total yang bisa diperoleh adalah 100</li>
+            </ol>
+        </div>
+
+        <!-- Embed Geogebra dengan petunjuk -->
+        <h4>Silakan pergunakan Geogebra berikut untuk membantu menyelesaikan kuis:</h4>
+        <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px;">
+          <iframe src="https://www.geogebra.org/geometry/xuj8tjpf?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4; border-radius: 4px;" frameborder="0"></iframe>
+        </div>
+
+        <div style="background-color:#FFE6E6; margin-top: 2rem; border-radius: 0.5rem;">
+            <div class="container">
+                <!-- Existing questions here -->
+                <!-- Add new questions after existing ones -->
+
+                <!-- Soal 1 -->
+                <div style="padding: 0.5rem 2rem 1rem 2rem;">
+                    <h3>Soal 1:</h3>
+                    <p>Diketahui sebuah lingkaran dengan pusat \(O\) dan titik \(A\) serta \(B\) berada pada keliling lingkaran. Jika sudut pusat \(\angle AOB\) adalah 120°, berapakah besar sudut keliling \(\angle APB\) yang dibentuk oleh titik \(P\) pada keliling lingkaran, berlawanan arah jarum jam dari \(A\) ke \(B\)?</p>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">40°</button>
+                    <button class="choice" data-value="1" style="width:100px; height:40px" onclick="quiz(event)">60°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">120°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">180°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">90°</button>
+                </div>
+
+                <!-- Soal 2 -->
+                <div style="padding: 0.5rem 2rem 1rem 2rem;">
+                    <h3>Soal 2:</h3>
+                    <p>Sebuah lingkaran memiliki titik \(A\) dan \(B\) pada kelilingnya dengan sudut keliling \(\angle AMB\) adalah 30°. Tentukan besar sudut pusat \(\angle AOB\) yang terbentuk.</p>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">30°</button>
+                    <button class="choice" data-value="1" style="width:100px; height:40px" onclick="quiz(event)">60°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">120°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">90°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">150°</button>
+                </div>
+
+                <!-- Soal 3 -->
+                <div style="padding: 0.5rem 2rem 1rem 2rem;">
+                    <h3>Soal 3:</h3>
+                    <p>Titik \(P\) dan \(Q\) terletak pada keliling sebuah lingkaran dengan pusat \(O\). Jika besar sudut keliling \(\angle PRQ\) adalah 70° dengan \(R\) adalah titik pada keliling yang berlawanan dengan \(O\) terhadap garis \(PQ\), tentukan besar sudut pusat \(\angle POQ\).</p>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">70°</button>
+                    <button class="choice" data-value="1" style="width:100px; height:40px" onclick="quiz(event)">140°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">210°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">280°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">160°</button>
+                </div>
+
+                <!-- Soal 4 -->
+                <div style="padding: 0.5rem 2rem 1rem 2rem;">
+                    <h3>Soal 4:</h3>
+                    <p>Dalam sebuah lingkaran, sudut pusat \(\angle XOY\) memiliki besar 150°. Berapakah besar sudut keliling \(\angle XPY\) jika \(P\) adalah titik pada keliling yang tidak berada di antara \(X\) dan \(Y\)?</p>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">15°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">30°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">45°</button>
+                    <button class="choice" data-value="1" style="width:100px; height:40px" onclick="quiz(event)">75°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">60°</button>
+                </div>
+
+                <!-- Soal 5 -->
+                <div style="padding: 0.5rem 2rem 1rem 2rem;">
+                    <h3>Soal 5:</h3>
+                    <p>Diketahui sebuah lingkaran dengan titik-titik \(X\) dan \(Y\) pada kelilingnya sehingga sudut pusat \(\angle XOY\) adalah 90°. Berapakah besar sudut keliling \(\angle XZY\) jika \(Z\) berada pada keliling lingkaran dan tidak berada di busur yang lebih kecil yang menghubungkan \(X\) dan \(Y\)?</p>
+                    <button class="choice" data-value="1" style="width:100px; height:40px" onclick="quiz(event)">45°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">90°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">135°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">180°</button>
+                    <button class="choice" data-value="0" style="width:100px; height:40px" onclick="quiz(event)">70°</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button style="display: block; width:100px; height:40px; margin: auto; margin-top:2rem; background-color:rgb(255, 200, 50);" onclick="result(event)">SUBMIT</button>
+            <h3 style="padding:2rem; text-align:center;" class="feedback"></h3>
+        </div>
+    </div>
+  </body>
+</html>

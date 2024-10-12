@@ -1,0 +1,119 @@
+/* Mengimpor font Lato dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap');
+
+/* Mengatur gaya umum untuk elemen body */
+body {
+    font-family: 'Lato', sans-serif; /* Menggunakan font Lato */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+}
+
+/* Mengatur gaya untuk navbar */
+.navbar {
+    background-color: #17a2b8; /* Warna latar belakang navbar (biru muda) */
+}
+
+.navbar-brand img {
+    border-radius: 5px; /* Memberikan sedikit lengkungan pada gambar */
+}
+
+/* Mengatur gaya untuk tautan di navbar */
+.navbar-nav .nav-link {
+    color: #ffffff; /* Warna teks putih */
+    font-weight: 900; /* Menggunakan variasi font Lato dengan ketebalan 900 untuk tampilan lebih tajam */
+    font-size: 1.2rem; /* Menambah ukuran font */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #138496; /* Warna latar belakang saat di-hover */
+    color: #ffffff; /* Warna teks saat di-hover */
+    border-radius: 5px; /* Menambah lengkungan pada tautan */
+}
+
+/* Menyesuaikan gaya untuk tautan aktif di navbar */
+.navbar-nav .nav-link.active {
+    background-color: #117a8b;
+    border-radius: 5px;
+}
+
+/* Hero Section Background */
+.hero-section {
+    background-color: #17a2b8; /* Sama dengan warna navbar */
+    color: #ffffff; /* Warna teks default di hero section agar kontras dengan background */
+}
+
+.hero-section h1,
+.hero-section p {
+    color: #ffffff; /* Memastikan teks tetap putih dan terlihat */
+}
+
+/* Gaya tombol di hero section */
+.btn-light {
+    background-color: #ffffff;
+    color: #17a2b8;
+    border: none;
+}
+
+.btn-light:hover {
+    background-color: #e0e0e0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 40px;
+        height: 50px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 8px 15px;
+    }
+
+    .hero-section {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .btn-light {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+/* Gaya untuk tombol navbar saat dalam mode collapse */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    filter: none;
+}
+
+/* Menambahkan warna teal sedang kustom untuk hero section */
+.bg-teal-400 {
+    background-color: #26A69A; /* Teal-400 */
+}
+
+.btn-tosca {
+    background-color: #00897B; /* Warna hijau tosca */
+    border-color: #00796B; /* Warna border sedikit lebih gelap dari background */
+    color: #ffffff; /* Warna teks putih */
+}
+
+.btn-tosca:hover {
+    background-color: #00796B; /* Lebih gelap saat di-hover */
+    border-color: #00695C;
+}
